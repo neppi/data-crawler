@@ -1,0 +1,174 @@
+/*
+@crawler_white                  : #ffffff;
+@crawler_dark_green             : #469d23;
+@crawler_slightly_darker_green  : #77b900;
+@crawler_green                  : #7cbf00;
+@crawler_slightly_lighter_green : #88cf00;
+@crawler_light_green            : #C8F69E;
+@crawler_blue_green             : #1ba5a2;
+@crawler_ash_blue               : #31798f;
+@crawler_light_battery_blue     : #327bae;
+@crawler_battery_blue           : #2d6593;
+@crawler_dark_battery_blue      : #2a5984;
+@crawler_grey                   : #4e4e4e;
+@crawler_light_grey             : #bfbfbf;
+@crawler_black                  : #000000;
+*/
+
+
+.App {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.nav-link {
+  color: #7cbf00;
+}
+
+.nav-link:hover {
+  color: #72a01c;
+}
+
+.nav-link:focus {
+  color: #72a01c;
+}
+
+/* http://stackoverflow.com/questions/22196587/how-to-center-align-vertically-the-container-in-bootstrap
+* This centers the logo on the home view
+*/
+.vertical-center {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.sidebar {
+  min-width: 200px;
+  max-width: 200px;
+  background: #343a40;
+  color: #adb5bd;
+  margin-left: -200px;
+  transition: all 0.5s;
+}
+
+.sidebar.is-open {
+  margin-left: 0;
+  transition: .5s;
+}
+
+
+.sidebar-header {
+  background: #2d3338 ! important;
+}
+
+.sidebar-header h3 {
+  color: #fff;
+  padding: 1em;
+}
+
+.sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+.collapse.show,
+.collapsing {
+  background: #313b4c;
+}
+
+.nav-item {
+  /*color: #ced4da;*/
+  color: #adb5bd;
+  font-weight: 300;
+}
+
+.nav-item.open {
+  color: #e9ecef;
+  background: #313b4c;
+}
+
+.nav-item.active {
+  color: #e9ecef;
+  background: #2a2d32 !important;
+}
+
+.nav-link.active {
+  color: #e9ecef;
+  background: #2a2d32 !important;
+}
+
+.nav-item:hover {
+  background: #475057;
+  color: #fff;
+  transition: .2s;
+}
+
+.nav-item .svg-inline--fa {
+  color: inherit;
+}
+
+li a.dropdown-toggle::after {
+  display: inline-flex;
+  position: relative;
+  left: 60%;
+  top: 10%
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+.content {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.innerContent {
+  padding: 20px;
+  margin-left: 0;
+  height: 93vH;
+  overflow-y: scroll;
+}
+
+@media only screen and (max-width: 575.98px) {
+  body {
+    overflow: hidden;
+  }
+
+  .content.is-open {
+    /*margin-left: 100%;*/
+    display: none;
+    transition: all 0.5s;
+  }
+
+  .sidebar.is-open {
+    min-width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    transition: all 0.5s, height 0s;
+    height: 100vh !important;
+  }
+
+  .sidebar.is-open>.sidebar-header button {
+    display: block;
+  }
+
+  li a.dropdown-toggle::after {
+    display: inline-block;
+    position: relative;
+    left: 68%;
+  }
+
+}

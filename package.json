@@ -18,9 +18,13 @@
     "inc-version": "./scripts/new-version.mjs ./ && git checkout && node ./scripts/add-version.mjs && yarn pretty"
   },
   "dependencies": {
+    "@influxdata/influxdb-client": "^1.27.0",
     "@types/node": "^18.0.6",
+    "dotenv-load": "^2.0.1",
     "esbuild": "^0.14.49",
+    "express": "^4.18.1",
     "minimist": "^1.2.6",
+    "morgan": "^1.10.0",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

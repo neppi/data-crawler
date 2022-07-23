@@ -1,3 +1,5 @@
+public/js/bundle.js
+public/js/bundle.js.map
 .build/*.js
 lib/version.ts
 node_modules
