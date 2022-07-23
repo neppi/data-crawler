@@ -1,0 +1,29 @@
+{
+  "name": "data-crawler",
+  "version": "1.0.0",
+  "description": "To gather personal timeseries like data.",
+  "main": "service.js",
+  "repository": "git@github.com:neppi/data-crawler.git",
+  "author": "neptuntriton <jens.haupt.eu@gmail.com>",
+  "license": "GPL3",
+  "private": false,
+  "scripts": {
+    "preinstall": "node scripts/edit-git-config.mjs && git checkout",
+    "dev": "yarn build && dotenv-load node ./.build/service.js",
+    "watch": "yarn build-app --watch",
+    "build": "yarn build-app && yarn build-service",
+    "build-app": "node ./scripts/build-app.mjs",
+    "build-service": "node ./scripts/build-service.mjs",
+    "pretty": "./node_modules/.bin/prettier --write \"**/*.{js,ts,tsx,mjs,json,md}\"",
+    "inc-version": "./scripts/new-version.mjs ./ && git checkout && node ./scripts/add-version.mjs && yarn pretty"
+  },
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "esbuild": "^0.14.49",
+    "minimist": "^1.2.6",
+    "prettier": "^2.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0"
+  }
+}
