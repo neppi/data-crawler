@@ -4,10 +4,10 @@ import http from 'http';
 import morgan from 'morgan';
 import express from 'express';
 import { info } from '../lib/utils';
-// import { defineAllRoutes } from './routes';
+import { defineAllRoutes } from './routes';
 // import { updateSettingsOnClients } from './settings';
 // import { updateStateOnClients } from './state';
-import { MessageTypes, TWebSocketMessage } from '../lib/types';
+import { MessageTypes, TServiceSettings, TWebSocketMessage } from '../lib/types';
 import { initWebSocketServer, WebsocketServerEvents } from './setupWebSocket';
 
 export const initWebserver = (host: string, port: number, publicPath: string): void => {
@@ -47,7 +47,7 @@ export const initWebserver = (host: string, port: number, publicPath: string): v
   app.use(morgan(':date[iso] Log: :method :url for :remote-addr :response-time ms'));
   app.use(express.static(publicPath));
 
-  // defineAllRoutes(app);
+  defineAllRoutes(app);
 
   app.use((req, res) => res.sendFile(`${publicPath}/index.html`));
 

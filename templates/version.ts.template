@@ -3,7 +3,7 @@
   Do not touch! Line will be modded by git hook triggered script scripts/handleVersion.js
 */
 
-export type TSCPIServiceVersion = {
+export type TCrawlerServiceVersion = {
   gitProjectName: string;
   gitHeadHash: string;
   gitBranch: string;
@@ -11,7 +11,7 @@ export type TSCPIServiceVersion = {
   gitBuildDate: string;
 };
 
-export const SCPIServiceVersion: TSCPIServiceVersion = {
+export const CrawlerServiceVersion: TCrawlerServiceVersion = {
   gitProjectName: 'GIT_PROJECT_NAME',
   gitHeadHash: 'GIT_HEAD_HASH',
   gitBranch: 'GIT_CURRENT_BRANCH',

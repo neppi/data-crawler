@@ -1,5 +1,6 @@
 import path from 'path';
 import { initInfluxClient } from './influx';
+import { setSettings } from './settings';
 import { initWebserver } from './web-server';
 
 const LISTEN_HOST = process.env.LISTEN_HOST || '0.0.0.0';
@@ -10,7 +11,7 @@ const INFLUX_TOKEN =
   'MvkXpPm-8-E9qplBb9Y-F84U4NQ6iqkr1hJZGjiKchGM6ZNq9oHE9Wdux3r3KYNgj84gLGtq4oobUc_38xWzBw==';
 const PUBLIC_PATH = process.env.PUBLIC_PATH || path.resolve(path.normalize(__dirname + '/../public'));
 
-console.log({
+setSettings({
   LISTEN_HOST,
   LISTEN_PORT,
   PUBLIC_PATH,

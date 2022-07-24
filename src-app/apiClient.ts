@@ -1,6 +1,4 @@
-import { ControllerTypes } from '../lib/commands';
-import { TLatencyHistogram } from '../lib/types';
-import { TSCPIServiceVersion } from '../lib/version';
+import { TCrawlerServiceVersion } from '../lib/version';
 
 type TInfo = {
   description: string;
@@ -18,7 +16,7 @@ class APIClient {
     });
   }
 
-  async getSCPIServiceVersion(): Promise<TCrawlerServiceVersion> {
+  async geTCrawlerServiceVersion(): Promise<TCrawlerServiceVersion> {
     return fetch('/api/v0/version').then((response) => {
       if (!response.ok) {
         throw new Error(response.statusText);
