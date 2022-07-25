@@ -1,4 +1,4 @@
-import { TServiceSettings } from '../lib/types';
+import { TDataSource, TServiceSettings } from '../lib/types';
 import { TCrawlerServiceVersion } from '../lib/version';
 
 type TInfo = {
@@ -28,6 +28,15 @@ class APIClient {
 
   async getSettings(): Promise<TServiceSettings> {
     return fetch('/api/v0/settings').then((response) => {
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.json();
+    });
+  }
+
+  async getDataSources(): Promise<Array<TDataSource>> {
+    return fetch('/api/v0/data_sources').then((response) => {
       if (!response.ok) {
         throw new Error(response.statusText);
       }

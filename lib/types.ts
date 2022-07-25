@@ -15,3 +15,8 @@ export type TServiceSettings = {
   INFLUX_URL: string;
   INFLUX_TOKEN: string;
 };
+
+export type TDataSource = {
+  id: string;
+  name: string;
+};
